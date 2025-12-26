@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps Training Program (8 Weeks)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; }
+    header { background: #0f172a; color: #fff; padding: 20px; }
+    header h1 { margin: 0; }
+    nav a { color: #e5e7eb; margin-right: 15px; text-decoration: none; }
+    section { padding: 30px; background: #fff; margin: 20px; border-radius: 8px; }
+    h2 { color: #0f172a; }
+    ul { line-height: 1.8; }
+    .card { background: #f9fafb; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
+    footer { background: #0f172a; color: #fff; text-align: center; padding: 15px; }
+    input, button { padding: 10px; margin: 5px 0; }
+    button { background: #2563eb; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #1d4ed8; }
+    .job { background: #eef2ff; padding: 15px; border-radius: 6px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>DevOps Training Program</h1>
+  <p>8 Weeks | 2 Classes per Week | 2 Hours per Class</p>
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#plan">Training Plan</a>
+    <a href="#jobs">DevOps Jobs</a>
+  </nav>
+</header>
+
+<section id="intro">
+  <h2>What is DevOps?</h2>
+  <p>
+    DevOps is a set of practices that combines <strong>software development (Dev)</strong> and 
+    <strong>IT operations (Ops)</strong> to shorten the software development lifecycle and deliver 
+    high-quality software continuously. DevOps emphasizes automation, collaboration, monitoring, 
+    and continuous improvement.
+  </p>
+  <ul>
+    <li>Continuous Integration & Continuous Delivery (CI/CD)</li>
+    <li>Infrastructure as Code (IaC)</li>
+    <li>Monitoring & Logging</li>
+    <li>Cloud & Containerization</li>
+  </ul>
+</section>
+
+<section id="plan">
+  <h2>Training Structure</h2>
+  <div class="card">
+    <strong>Duration:</strong> 8 Weeks<br />
+    <strong>Classes:</strong> 2 per week<br />
+    <strong>Class Duration:</strong> 2 Hours<br />
+    <strong>Mode:</strong> Hands-on + Theory
+  </div>
+
+  <h2>Detailed 2-Week Training Plan (Sample)</h2>
+
+  <div class="card">
+    <h3>Week 1: DevOps Foundations</h3>
+    <ul>
+      <li>Class 1:
+        <ul>
+          <li>Introduction to DevOps</li>
+          <li>Traditional SDLC vs DevOps</li>
+          <li>DevOps Culture & Mindset</li>
+        </ul>
+      </li>
+      <li>Class 2:
+        <ul>
+          <li>Linux Basics for DevOps</li>
+          <li>Important Linux Commands</li>
+          <li>User & Permission Management</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Week 2: Version Control & CI Basics</h3>
+    <ul>
+      <li>Class 3:
+        <ul>
+          <li>Git Fundamentals</li>
+          <li>GitHub Workflow</li>
+          <li>Branching & Merging</li>
+        </ul>
+      </li>
+      <li>Class 4:
+        <ul>
+          <li>Introduction to CI/CD</li>
+          <li>Jenkins Overview</li>
+          <li>Creating First CI Pipeline</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <p><em>Remaining weeks would cover Docker, Kubernetes, Cloud (AWS), Terraform, Monitoring, and a Capstone Project.</em></p>
+</section>
+
+<section id="jobs">
+  <h2>Search Entry-Level DevOps Jobs</h2>
+  <p>
+    This is a <strong>demo job search</strong>. In real projects, LinkedIn data should be accessed 
+    via official APIs or manual links (scraping LinkedIn is against their terms).
+  </p>
+
+  <input type="text" id="keyword" placeholder="Enter job keyword (e.g. Junior DevOps)" />
+  <button onclick="searchJobs()">Search</button>
+
+  <div id="results"></div>
+</section>
+
+<footer>
+  <p>© 2025 DevOps Training | Deployed via GitHub Pages</p>
+</footer>
+
+<script>
+  function searchJobs() {
+    const keyword = document.getElementById('keyword').value;
+    const results = document.getElementById('results');
+    results.innerHTML = '';
+
+    if (!keyword) {
+      results.innerHTML = '<p>Please enter a job keyword.</p>';
+      return;
+    }
+
+    // Mock job data (sample entry-level DevOps roles)
+    const jobs = [
+      { title: 'Junior DevOps Engineer', company: 'TechSoft', location: 'Remote' },
+      { title: 'DevOps Trainee', company: 'CloudNova', location: 'Dubai' },
+      { title: 'Associate DevOps Engineer', company: 'NextGen IT', location: 'Lahore' }
+    ];
+
+    jobs.forEach(job => {
+      if (job.title.toLowerCase().includes(keyword.toLowerCase())) {
+        results.innerHTML += `
+          <div class="job">
+            <strong>${job.title}</strong><br />
+            Company: ${job.company}<br />
+            Location: ${job.location}<br />
+            <a href="https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(job.title)}" target="_blank">
+              Search on LinkedIn
+            </a>
+          </div>
+        `;
+      }
+    });
+
+    if (results.innerHTML === '') {
+      results.innerHTML = '<p>No matching jobs found.</p>';
+    }
+  }
+</script>
+
+</body>
+</html>
